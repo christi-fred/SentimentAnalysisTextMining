@@ -34,8 +34,8 @@ for k, v in review_dict.items():
         for i, j in v.items():
             extracted_data = {key: j[key] for key in keys_to_extract if key in j}
             if extracted_data['review'] != '':
-                if langdetect.detect(extracted_data['review']) == 'en':
-                    data.append(extracted_data)
+                #if langdetect.detect(extracted_data['review']) == 'en':
+                data.append(extracted_data)
                     #print(extracted_data['votes_up'])
 
 # store retrieved data into a dataframe
@@ -203,7 +203,9 @@ app.layout = html.Div(children=[
             'right': '100px',
             'width': '40%'}),
     html.Img(src='data:image/png;base64,{}'.format(img_base64), style={'position': 'absolute','top': '100px','right': '150px','width': '40%', 'height': '35%'}),
-    html.Img(src='data:image/png;base64,{}'.format(img_base64_2), style={'position': 'absolute','top': '300px','right': '150px','width': '40%', 'height': '40%'})
+    html.Img(src='data:image/png;base64,{}'.format(img_base64_2), 
+    style={'position': 'absolute','top': '350px','right': '150px','width': '40%', 'height': '40%'}
+    )
 ]),
 
 # Define callback to update sentiment score
